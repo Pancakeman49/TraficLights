@@ -14,17 +14,27 @@ namespace Trafic_lights
     public partial class TraficLights : Form
     {
         private Timer timerSwitch;
+        int time = 0;
+        int redInterval = 10;
+        int yellowInterval = 3;
+        int greenInterval = 6;
+        int totalTime = 0;
         public TraficLights()
         {
             InitializeComponent();
             InitilizeProgram();
             InitiulizeTimerSwitch();
+            ClaculateStuffIdkDontAskMeWhatItDoesIDontKnowAndIDontWantToKnowWaitIDoKnowWhatItDoesIsntThisMethodsNameReallyLong();
         }
         private void InitilizeProgram()
         {
             RedLight.BackColor = Color.Gray;
             YellowLight.BackColor = Color.Gray;
             GreenLight.BackColor = Color.Gray;
+
+            RedNumeric.Value = redInterval;
+            YellowNumeric.Value = yellowInterval;
+            GreenNumeric.Value = greenInterval;
         }
         private void InitiulizeTimerSwitch()
         {
@@ -35,14 +45,47 @@ namespace Trafic_lights
         }
         private void TimerSwitch_Tick(object sender, EventArgs e)
         {
-            if (RedLight.BackColor == Color.Gray)
+            time++; 
+            if (time >= totalTime)
             {
+                time = 0;
+            }
+            if (time < redInterval)
+            {
+                GreenLight.BackColor = Color.Gray;
                 RedLight.BackColor = Color.Red;
+            }
+            if (time == redInterval)
+            {
+                RedLight.BackColor = Color.Gray;
+                YellowLight.BackColor = Color.Yellow;
+            }
+            if (time - redInterval == yellowInterval)
+            {
+                YellowLight.BackColor = Color.Gray;
+                GreenLight.BackColor = Color.Green;
+            }
+        }
+        private void Buttons_click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            if (button.Tag == "R")
+            {
+                redInterval = Decimal.ToInt32(RedNumeric.Value);
+            }
+            else if (button.Tag == "Y")
+            {
+                yellowInterval = Decimal.ToInt32(YellowNumeric.Value);
             }
             else
             {
-                RedLight.BackColor = Color.Gray;
+                greenInterval = Decimal.ToInt32(GreenNumeric.Value);
             }
+            ClaculateStuffIdkDontAskMeWhatItDoesIDontKnowAndIDontWantToKnowWaitIDoKnowWhatItDoesIsntThisMethodsNameReallyLong();
+        }
+        private void ClaculateStuffIdkDontAskMeWhatItDoesIDontKnowAndIDontWantToKnowWaitIDoKnowWhatItDoesIsntThisMethodsNameReallyLong()
+        {
+            totalTime = redInterval + yellowInterval + greenInterval;
         }
     }
 }
