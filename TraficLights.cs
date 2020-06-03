@@ -31,10 +31,18 @@ namespace Trafic_lights
             timerSwitch = new Timer();
             timerSwitch.Interval = 1000;
             timerSwitch.Tick += new EventHandler(TimerSwitch_Tick);
+            timerSwitch.Start();
         }
         private void TimerSwitch_Tick(object sender, EventArgs e)
         {
-
+            if (RedLight.BackColor == Color.Gray)
+            {
+                RedLight.BackColor = Color.Red;
+            }
+            else
+            {
+                RedLight.BackColor = Color.Gray;
+            }
         }
     }
 }
