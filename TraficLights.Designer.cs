@@ -1,6 +1,6 @@
 ﻿namespace Trafic_lights
 {
-    partial class Form1
+    partial class TraficLights
     {
         /// <summary>
         /// Required designer variable.
@@ -38,25 +38,25 @@
             // 
             // RedLight
             // 
-            this.RedLight.Location = new System.Drawing.Point(393, 123);
+            this.RedLight.Location = new System.Drawing.Point(12, 12);
             this.RedLight.Name = "RedLight";
-            this.RedLight.Size = new System.Drawing.Size(100, 50);
+            this.RedLight.Size = new System.Drawing.Size(200, 200);
             this.RedLight.TabIndex = 0;
             this.RedLight.TabStop = false;
             // 
             // YellowLight
             // 
-            this.YellowLight.Location = new System.Drawing.Point(350, 200);
+            this.YellowLight.Location = new System.Drawing.Point(12, 218);
             this.YellowLight.Name = "YellowLight";
-            this.YellowLight.Size = new System.Drawing.Size(100, 50);
+            this.YellowLight.Size = new System.Drawing.Size(200, 200);
             this.YellowLight.TabIndex = 1;
             this.YellowLight.TabStop = false;
             // 
             // GreenLight
             // 
-            this.GreenLight.Location = new System.Drawing.Point(410, 288);
+            this.GreenLight.Location = new System.Drawing.Point(12, 424);
             this.GreenLight.Name = "GreenLight";
-            this.GreenLight.Size = new System.Drawing.Size(100, 50);
+            this.GreenLight.Size = new System.Drawing.Size(200, 200);
             this.GreenLight.TabIndex = 2;
             this.GreenLight.TabStop = false;
             // 
@@ -64,7 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(224, 634);
             this.Controls.Add(this.GreenLight);
             this.Controls.Add(this.YellowLight);
             this.Controls.Add(this.RedLight);
