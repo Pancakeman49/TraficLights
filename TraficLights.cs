@@ -27,13 +27,13 @@ namespace Trafic_lights
         public TraficLights()
         {
             InitializeComponent();
-            InitilizeProgram();
-            InitiulizeTimerSwitch();
-            InitilizeTimerBlink();
+            InitializeProgram();
+            InitializeTimerSwitch();
+            InitializeTimerBlink();
 
 
         }
-        private void InitilizeProgram()
+        private void InitializeProgram()
         {
             RedLight.BackColor = Color.Gray;
             YellowLight.BackColor = Color.Gray;
@@ -43,14 +43,14 @@ namespace Trafic_lights
             YellowNumeric.Value = yellowInterval;
             GreenNumeric.Value = greenInterval;
         }
-        private void InitiulizeTimerSwitch()
+        private void InitializeTimerSwitch()
         {
             timerSwitch = new Timer();
             timerSwitch.Interval = 1000;
             timerSwitch.Tick += new EventHandler(TimerSwitch_Tick);
             timerSwitch.Start();
         }
-        private void InitilizeTimerBlink()
+        private void InitializeTimerBlink()
         {
             timerBlink = new Timer();
             timerBlink.Interval = 500;
