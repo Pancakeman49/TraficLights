@@ -22,6 +22,7 @@ namespace Trafic_lights
         private int greenInterval = 6;
         private int timer = 0;
         private bool reverseLights = false;
+        private bool greenBlink = true;
 
         
         public TraficLights()
@@ -39,9 +40,15 @@ namespace Trafic_lights
             YellowLight.BackColor = Color.Gray;
             GreenLight.BackColor = Color.Gray;
 
+            RedLight.Region = Round(RedLight);
+            YellowLight.Region = Round(YellowLight);
+            GreenLight.Region = Round(GreenLight);
+
             RedNumeric.Value = redInterval;
             YellowNumeric.Value = yellowInterval;
             GreenNumeric.Value = greenInterval;
+
+            greenBlinkCheck.Checked = true;
         }
         private void InitializeTimerSwitch()
         {
@@ -79,7 +86,10 @@ namespace Trafic_lights
                     RedLight.BackColor = Color.Gray;
                     YellowLight.BackColor = Color.Gray;
                     GreenLight.BackColor = Color.Green;
-                    timerBlink.Start();
+                    if (greenBlink == true)
+                    {
+                        timerBlink.Start();
+                    }
                     reverseLights = true;
                 }
             }
@@ -127,6 +137,25 @@ namespace Trafic_lights
                 greenInterval = Decimal.ToInt32(GreenNumeric.Value);
             }
         }
+        private Region Round(PictureBox picB)
+        {
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            gp.AddEllipse(0, 0, picB.Width, picB.Height);
+            return new Region(gp);
+        }
+        private void greenBlinkCheck_Click(object sender, EventArgs e)
+        {
+            if (greenBlinkCheck.Checked == true)
+            {
+                greenBlink = true;
+            }
+            else
+            {
+                greenBlink = false;
+            }
+        }
+
+
 
 
 
@@ -167,5 +196,6 @@ namespace Trafic_lights
             }
             seconds++;
         }
+
     }
 }

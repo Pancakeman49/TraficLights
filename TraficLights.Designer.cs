@@ -37,6 +37,7 @@
             this.RedNumeric = new System.Windows.Forms.NumericUpDown();
             this.YellowNumeric = new System.Windows.Forms.NumericUpDown();
             this.GreenNumeric = new System.Windows.Forms.NumericUpDown();
+            this.greenBlinkCheck = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.RedLight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YellowLight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenLight)).BeginInit();
@@ -71,9 +72,10 @@
             // 
             // RedButton
             // 
-            this.RedButton.Location = new System.Drawing.Point(344, 12);
+            this.RedButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RedButton.Location = new System.Drawing.Point(218, 40);
             this.RedButton.Name = "RedButton";
-            this.RedButton.Size = new System.Drawing.Size(108, 23);
+            this.RedButton.Size = new System.Drawing.Size(120, 23);
             this.RedButton.TabIndex = 6;
             this.RedButton.Tag = "R";
             this.RedButton.Text = "Set Red Interval";
@@ -82,9 +84,10 @@
             // 
             // YellowButton
             // 
-            this.YellowButton.Location = new System.Drawing.Point(344, 218);
+            this.YellowButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YellowButton.Location = new System.Drawing.Point(218, 246);
             this.YellowButton.Name = "YellowButton";
-            this.YellowButton.Size = new System.Drawing.Size(108, 23);
+            this.YellowButton.Size = new System.Drawing.Size(120, 23);
             this.YellowButton.TabIndex = 7;
             this.YellowButton.Tag = "Y";
             this.YellowButton.Text = "Set Yellow Interval";
@@ -93,9 +96,10 @@
             // 
             // GreenButton
             // 
-            this.GreenButton.Location = new System.Drawing.Point(344, 424);
+            this.GreenButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GreenButton.Location = new System.Drawing.Point(218, 452);
             this.GreenButton.Name = "GreenButton";
-            this.GreenButton.Size = new System.Drawing.Size(108, 23);
+            this.GreenButton.Size = new System.Drawing.Size(120, 23);
             this.GreenButton.TabIndex = 8;
             this.GreenButton.Tag = "G";
             this.GreenButton.Text = "Set Green Interval";
@@ -104,6 +108,7 @@
             // 
             // RedNumeric
             // 
+            this.RedNumeric.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RedNumeric.Location = new System.Drawing.Point(218, 12);
             this.RedNumeric.Maximum = new decimal(new int[] {
             1000,
@@ -111,11 +116,12 @@
             0,
             0});
             this.RedNumeric.Name = "RedNumeric";
-            this.RedNumeric.Size = new System.Drawing.Size(120, 20);
+            this.RedNumeric.Size = new System.Drawing.Size(120, 22);
             this.RedNumeric.TabIndex = 9;
             // 
             // YellowNumeric
             // 
+            this.YellowNumeric.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YellowNumeric.Location = new System.Drawing.Point(218, 218);
             this.YellowNumeric.Maximum = new decimal(new int[] {
             1000,
@@ -123,11 +129,12 @@
             0,
             0});
             this.YellowNumeric.Name = "YellowNumeric";
-            this.YellowNumeric.Size = new System.Drawing.Size(120, 20);
+            this.YellowNumeric.Size = new System.Drawing.Size(120, 22);
             this.YellowNumeric.TabIndex = 10;
             // 
             // GreenNumeric
             // 
+            this.GreenNumeric.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GreenNumeric.Location = new System.Drawing.Point(218, 424);
             this.GreenNumeric.Maximum = new decimal(new int[] {
             1000,
@@ -135,14 +142,27 @@
             0,
             0});
             this.GreenNumeric.Name = "GreenNumeric";
-            this.GreenNumeric.Size = new System.Drawing.Size(120, 20);
+            this.GreenNumeric.Size = new System.Drawing.Size(120, 22);
             this.GreenNumeric.TabIndex = 11;
+            // 
+            // greenBlinkCheck
+            // 
+            this.greenBlinkCheck.AutoSize = true;
+            this.greenBlinkCheck.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.greenBlinkCheck.Location = new System.Drawing.Point(218, 481);
+            this.greenBlinkCheck.Name = "greenBlinkCheck";
+            this.greenBlinkCheck.Size = new System.Drawing.Size(87, 19);
+            this.greenBlinkCheck.TabIndex = 12;
+            this.greenBlinkCheck.Text = "Green Blink";
+            this.greenBlinkCheck.UseVisualStyleBackColor = true;
+            this.greenBlinkCheck.Click += new System.EventHandler(this.greenBlinkCheck_Click);
             // 
             // TraficLights
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 636);
+            this.ClientSize = new System.Drawing.Size(345, 636);
+            this.Controls.Add(this.greenBlinkCheck);
             this.Controls.Add(this.GreenNumeric);
             this.Controls.Add(this.YellowNumeric);
             this.Controls.Add(this.RedNumeric);
@@ -161,6 +181,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.YellowNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenNumeric)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,6 +196,7 @@
         private System.Windows.Forms.NumericUpDown RedNumeric;
         private System.Windows.Forms.NumericUpDown YellowNumeric;
         private System.Windows.Forms.NumericUpDown GreenNumeric;
+        private System.Windows.Forms.CheckBox greenBlinkCheck;
     }
 }
 
